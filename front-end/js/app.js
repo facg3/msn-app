@@ -13,7 +13,7 @@ var castFunctions = {
 
 const movieFunctions = {
   idMovie: function (r) {
-    
+
     return r.results[0].id;
 
   },
@@ -26,7 +26,6 @@ const movieFunctions = {
     return res.results[0].overview;
   },
   rateMovie : function (r) {
-    // console.log(r.results[0].vote_average);
     return r.results[0].vote_average;
   }
 };
@@ -36,7 +35,6 @@ const movieFunctions = {
     return rs.data[0].images.fixed_height_still.url;
   }
 
-// window.module = {};
 if (typeof module !== 'undefined') {
   module.exports = {
     movieFunctions:movieFunctions,

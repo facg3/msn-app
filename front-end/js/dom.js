@@ -31,25 +31,34 @@ function idMovies (searchInput,callback){
   var search = document.querySelector('.search_query').value;
   var url = 'https://api.themoviedb.org/3/search/movie?api_key=0bd7fd73d465ac05909aa27eb30a3bea&query=' + search;
   fetch(url, function (response){
-    var x = movieFunctions.rateMovie(response);
+    var rate = movieFunctions.rateMovie(response);
     var li = document.createElement('li');
-    li.innerHTML = (x);
+    li.innerHTML = (rate);
     ul.appendChild(li);
-    console.log(movieFunctions.photoMovie(response));
-    console.log(movieFunctions.ovMovie(response));
+    var img = document.createElement('img');
+    var imgUrl ='https://image.tmdb.org/t/p/w640'+movieFunctions.photoMovie(response);
+    img.src = imgUrl;
+    ul.appendChild(img);
+    var p = document.createElement('p');
+    p.innerHTML = movieFunctions.ovMovie(response);
+    ul.appendChild(p);
     var id = movieFunctions.idMovie(response);
-    console.log(id);
+
     callback(id);
   })
 }
-
-
-
 function castMovies(id,callback) {
+  var castName = document.querySelector('.cast-names');
   var url = "https://api.themoviedb.org/3/movie/"+id+"/casts?api_key=0bd7fd73d465ac05909aa27eb30a3bea";
   fetch(url, function (response) {
     var name = castFunctions.topcasts(response);
-    console.log(name);
+    var ul = document.createElement('ul');
+    var casts=  name.forEach(function (value) {
+      var li = document.createElement('li');
+      li.innerHTML = value;
+      ul.appendChild(li);
+    })
+    castName.appendChild(ul);
     callback(name);
 
   })
@@ -58,12 +67,13 @@ function castMovies(id,callback) {
 
 
 function castGify(name, callback) {
+  var gifResult = document.querySelector('.gifs-results');
   var url = "http://api.giphy.com/v1/gifs/search?q="+name+"&api_key=lj5mU1p8ueKRo1mBPEfEVSsnkHPXBWPh";
   fetch(url, function (response) {
     var img = document.createElement('img');
     img.src = gifsMovie(response);
-    console.log(img.src);
-    searchResult.appendChild(img);
+    gifResult.appendChild(img);
+
   })
 
 }
