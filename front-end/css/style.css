@@ -1,15 +1,61 @@
 body{
   margin: 0;
   padding: 0;
+  color: #444;
+  letter-spacing: 1px;
+}
+.wrapper{
+    width: 95%;
+    max-width: 1170px;
+    margin: 20px auto;
+    border-radius: 6px;
+    box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    padding: 0 0 20px;
+    overflow: hidden;
+    border: 1px solid lightgray;
+}
+.page-banner{
+
+    padding: 10px 0;
+}
+.page-banner h1{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+.page-banner input {
+    width: 90%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #444;
+}
+.page-banner button {
+    width: 90%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: rgb(143, 241, 238);
+    color: black;
 }
 h1{
-    margin: 0;
+    width: 100%
+    text-align: center;
     color: black;
     justify-content: center;
-    align-items: center;
-    display: flex;
+    font-weight: normal;
 }
-.search_query{
+
+/*.search_query{
     margin: 0px auto;
     width: 300px;
     height: 50px;
@@ -19,12 +65,10 @@ h1{
     color: white;
     justify-content: center;
     align-items: center;
-    display: flex;
+    display: flex;*/
 
 }
 .search-btn{
-background-color: #11113A;
-    border: none;
     color: white;
     width: 100px;
     height: 50px;
