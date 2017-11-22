@@ -4,13 +4,14 @@ body{
 }
 h1{
     margin: 0;
+    margin-top: 15%;
     color: black;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 .search_query{
-    margin: 0px auto;
+    margin: 10px auto;
     width: 300px;
     height: 50px;
     box-sizing: border-box;
@@ -20,21 +21,24 @@ h1{
     justify-content: center;
     align-items: center;
     display: flex;
-
+    border-radius: 20px;
+    font-size: 1.2em;
+    text-align: center;
 }
 .search-btn{
+  margin: 10px auto;
 background-color: #11113A;
     border: none;
     color: white;
     width: 100px;
     height: 50px;
     text-decoration: none;
-    margin: 100px auto;
-    margin-top: 0px;
+    margin: 10px auto;
     justify-content: center;
     align-items: center;
     display: flex;
     cursor: pointer;
+    border-radius: 20px;
   }
   .all{
     display: flex;
