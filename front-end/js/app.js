@@ -12,9 +12,7 @@ var castFunctions = {
 
 const movieFunctions = {
   idMovie: function (r) {
-
     return r.results[0].id;
-
   },
   photoMovie : function (r) {
     return r.results[0].poster_path;
@@ -26,13 +24,18 @@ const movieFunctions = {
   },
   rateMovie : function (r) {
     return r.results[0].vote_average;
+  },
+  gifsMovie: function (rs){
+    var gifs = [];
+   for (var i = 0; i< 10; i++){
+    gifs.push(rs.data[i].images.downsized.url);
+    }
+    return gifs;
   }
 };
 
 
- function gifsMovie (rs) {
-    return rs.data[0].images.fixed_height_still.url;
-  }
+
 
 if (typeof module !== 'undefined') {
   module.exports = {
