@@ -1,0 +1,24 @@
+{
+  "name": "msn-app",
+  "version": "1.0.0",
+  "description": "movies and gifs",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape ./front-end/test/*.test.js | tap-spec"
+  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facg3/msn-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facg3/msn-app/issues"
+  },
+  "homepage": "https://github.com/facg3/msn-app#readme",
+  "dependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
+}

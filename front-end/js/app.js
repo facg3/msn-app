@@ -1,61 +1,46 @@
-window.onload = btnListener;
-var searchInput= null;
-function fetch(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function(){
-    if(xhr.readyState == 4 && xhr.status == 200){
-      var response = JSON.parse(xhr.responseText);
-      callback(response);
+
+
+var castFunctions = {
+    topcasts : function (res) {
+      var casts = [];
+      for (var i = 0; i < 5; i++) {
+        casts.push(res.cast[i].name);
+      };
+
+      return casts;
     }
+}
+
+const movieFunctions = {
+  idMovie: function (r) {
+    
+    return r.results[0].id;
+
+  },
+  photoMovie : function (r) {
+    return r.results[0].poster_path;
+  },
+  //overview
+  ovMovie : function (res) {
+    // console.log(res.results[0].overview);
+    return res.results[0].overview;
+  },
+  rateMovie : function (r) {
+    // console.log(r.results[0].vote_average);
+    return r.results[0].vote_average;
   }
-  xhr.open('GET', url)
-  xhr.send();
-}
+};
 
 
-function btnListener(){
-  var btn = document.querySelector('.search-btn');
-  btn.addEventListener('click',function(){
-    idMovies(searchInput,function (id) {
-      castMovies(id,function (name) {
-        castGify(name);
-      });
-    });
-  });
-}
+ function gifsMovie (rs) {
+    return rs.data[0].images.fixed_height_still.url;
+  }
 
-function idMovies (searchInput,callback){
-  var search = document.querySelector('.search_query').value;
-
-  console.log(searchInput);
-  var url = 'https://api.themoviedb.org/3/search/movie?api_key=0bd7fd73d465ac05909aa27eb30a3bea&query=' + search;
-  fetch(url, function (response){
-    var result = response.results[0];
-    var id = result.id;
-    callback(id);
-  })
-}
-
-function castMovies(id,callback) {
-  var url = "https://api.themoviedb.org/3/movie/"+id+"/casts?api_key=0bd7fd73d465ac05909aa27eb30a3bea";
-  fetch(url, function (response) {
-
-    var cast = response.cast[0];
-    var name = cast.name;
-    callback(name);
-
-  })
-}
-
-function castGify(name, callback) {
-
-  var url = "http://api.giphy.com/v1/gifs/search?q="+name+"&api_key=lj5mU1p8ueKRo1mBPEfEVSsnkHPXBWPh";
-  fetch(url, function (response) {
-   var gif =  response.data[1].images.fixed_height_still.url;
-    var img = document.createElement('img');
-    img.src = gif;
-    var searchResult = document.querySelector('.search-results');
-    searchResult.appendChild(img);
-  })
-
+// window.module = {};
+if (typeof module !== 'undefined') {
+  module.exports = {
+    movieFunctions:movieFunctions,
+    gifsMovie:gifsMovie,
+    castFunctions:castFunctions
+  }
 }
