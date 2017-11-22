@@ -2,12 +2,144 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./front-end/css/style.css">
   <title>Msn app</title>
+<style>
+body{
+  background-image: url("ff.png");
+  background-size: cover;
+  height:100vh;
+  width:100%;
+
+}
+h1{
+  margin: 100px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.search_query{
+  margin: 100px auto;
+    width: 300px;
+    height: 50px;
+    box-sizing: border-box;
+    background-color: #11113A;
+    margin-bottom: 2px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.search-btn{
+background-color: #11113A;
+    border: none;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-decoration: none;
+    margin: 100px auto;
+    margin-top: 0px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+.flex-container{
+display: flex;
+justify-content: flex-start;
+}
+.po{
+  margin: auto;
+  height: 500px;
+  width:500px;
+}
+.ph{
+  height: 300px;
+  width:300px;
+  margin: 20px;
+}
+.Poster{
+  display:flex;
+  flex-direction: column;
+  align-items:flex-start;
+  margin: 20px;
+  width:50%;
+}
+.Information-Film{
+  display: flex;
+  flex-direction: column;
+  width:50%;
+  color: white;
+}
+.overview{
+  display: flex;
+ color: white;
+ flex-direction: column;
+}
+.cast{
+color: white;
+  display: flex;
+ flex-direction: column;
+}
+.bottom{
+  display: flex;
+  flex-direction: row;
+}
+.photos{
+
+  display: flex;
+  justify-content: center;
+}
+.photos>div {
+
+  margin:40px;;
+
+
+}
+
+
+</style>
 </head>
+<header>
+
 <body>
-  <input type="text" class="search_query">
+  <h1> MSN App </h1>
+  <input type="text" class="search_query" placeholder="Enter search">
   <button class="search-btn">Search</button>
-  <div class="search-results"></div>
+  <div class="flex-container">
+
+  <div class="Poster">
+<img class="po" src="photo.jpeg" >
+</div>
+  <div class="Information-Film">
+    <div class="overview">
+      <h2>Fight Club</h2>
+      <p>As the Trump administration’s budget plans come into sharper focus, it is increasingly clear that the Pentagon will not be getting enough money to recover from the depressed investment levels of the Obama years
+      </p>
+      <p>rate Film:20</p></div>
+
+  <div class="cast">Nadia
+  <ul>
+    <li>Ahmed</li>
+    <li>Ahmed</li>
+    <li>Ahmed</li>
+    <li>Ahmed</li>
+    <li>ggg</li>
+  </ul></div>
+</div>  </div>
+<div class="bottom search-results">
+
+  <div class="photos">
+    <img class="ph" src="photo.jpeg" >
+    <img class="ph"src="photo.jpeg" >
+    <img  class="ph" src="photo.jpeg" >
+</div>
+</div>
+
   <script src="./front-end/js/app.js"></script>
 </body>
 </html>
