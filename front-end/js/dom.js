@@ -39,6 +39,7 @@ function idMovies (searchInput,callback){
     var imgUrl ='https://image.tmdb.org/t/p/w640'+movieFunctions.photoMovie(response);
     img.src = imgUrl;
     poter.appendChild(img);
+    
     var divov = document.querySelector('.overview');
     var p = document.createElement('p');
     p.innerHTML = movieFunctions.ovMovie(response);
@@ -61,17 +62,20 @@ function castMovies(id,callback) {
     })
     castName.appendChild(ul);
     callback(name);
-
   })
 }
 
 function castGify(name, callback) {
+
   var gifResult = document.querySelector('.gifs-results');
   var url = "http://api.giphy.com/v1/gifs/search?q="+name+"&api_key=lj5mU1p8ueKRo1mBPEfEVSsnkHPXBWPh";
   fetch(url, function (response) {
-    var img = document.createElement('img');
-    img.src = gifsMovie(response);
-    gifResult.appendChild(img);
+    var imgs = movieFunctions.gifsMovie(response);
+    var imgsUL = imgs.forEach(function(value){
+      var img = document.createElement('img');
+      img.src = value;
+      gifResult.appendChild(img);
+    })
   })
 
 }
