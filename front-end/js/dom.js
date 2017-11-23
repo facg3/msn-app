@@ -1,6 +1,8 @@
 window.onload = btnListener;
 var searchInput = null;
 
+// fetch function help me when i create request from api
+// return the response
 function fetch(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -13,6 +15,7 @@ function fetch(url, callback) {
   xhr.send();
 }
 
+// this function for listen callback function
 function btnListener() {
   var btn = document.querySelector('.search-btn');
   btn.addEventListener('click', function() {
@@ -24,9 +27,13 @@ function btnListener() {
   });
 }
 
+// this part help me at the button and create ul
 var searchResult = document.querySelector('.search-results');
 var ul = document.createElement('ul');
 searchResult.appendChild(ul);
+
+
+// this function for get the id form first aip
 
 function idMovies(searchInput, callback) {
   var search = document.querySelector('.search_query').value;
@@ -62,6 +69,9 @@ function idMovies(searchInput, callback) {
     })
   }
 }
+
+// cast of movie
+
 function castMovies(id, callback) {
   var castName = document.querySelector('.cast-names');
   document.querySelector('.cast-names').textContent = "";
@@ -78,10 +88,12 @@ function castMovies(id, callback) {
     callback(name);
   })
 }
+
+// gifs for each cast
 function castGify(name, callback) {
   var gifResult = document.querySelector('.gifs-results');
   document.querySelector('.gifs-results').textContent = "";
-  var url = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=lj5mU1p8ueKRo1mBPEfEVSsnkHPXBWPh";
+  var url = "https://api.giphy.com/v1/gifs/search?q=" + name + '&limit=10' + "&api_key=lj5mU1p8ueKRo1mBPEfEVSsnkHPXBWPh";
   fetch(url, function(response) {
     var imgs = movieFunctions.gifsMovie(response);
     var imgsUL = imgs.forEach(function(value) {

@@ -28,6 +28,12 @@ var responseGifs = {
         url: "https://media3.giphy.com/media/JQtjrjz75ttYY/giphy_s.gif",
         width: "500",
         height: "335"
+      },
+      downsized: {
+        url: "https://media2.giphy.com/media/JQtjrjz75ttYY/giphy-downsized.gif",
+        width: "500",
+        height: "335",
+        size: "453764"
       }
     }
   }]
@@ -87,28 +93,28 @@ var responseName = {
   ]
 }
 var responseID = {
-page:1,
-results:[{
-adult:false,
-backdrop_path:"/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg",
-genre_ids:[18],
-id:550,
-original_language:"en",
-original_title:"Fight Club",
-overview:"A ticking",
-popularity:48.418775,
-poster_path:"/adw6Lq9FiC9zjYEpOqfq03ituwp.jpg",
-release_date:"1999-10-15",
-title:"Fight Club",
-video:false,
-vote_average:8.3,
-vote_count: 10152
-}]
+  page: 1,
+  results: [{
+    adult: false,
+    backdrop_path: "/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg",
+    genre_ids: [18],
+    id: 550,
+    original_language: "en",
+    original_title: "Fight Club",
+    overview: "A ticking",
+    popularity: 48.418775,
+    poster_path: "/adw6Lq9FiC9zjYEpOqfq03ituwp.jpg",
+    release_date: "1999-10-15",
+    title: "Fight Club",
+    video: false,
+    vote_average: 8.3,
+    vote_count: 10152
+  }]
 }
 
 test('gifs Movie', function(t) {
-  var actual = app.gifsMovie(responseGifs);
-  var expected = 'https://media3.giphy.com/media/JQtjrjz75ttYY/200_s.gif';
+  var actual = Array.isArray(app.movieFunctions.gifsMovie(responseGifs));
+  var expected = true;
   t.deepEqual(actual, expected, 'TEST GIF FUN PASS');
   t.end();
 });
@@ -143,6 +149,7 @@ test('OVERVIE Movie', function(t) {
   t.deepEqual(actual, expected, 'TEST OVERVIE MOVIES PASS');
   t.end();
 });
+
 test('RATE Movie', function(t) {
   var actual = app.movieFunctions.rateMovie(responseID);
 

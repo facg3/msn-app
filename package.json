@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "tape ./front-end/test/*.test.js | tap-spec"
-  
   },
   "repository": {
     "type": "git",
