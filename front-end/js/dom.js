@@ -35,6 +35,8 @@ function idMovies(searchInput, callback) {
   } else {
     var url = 'https://api.themoviedb.org/3/search/movie?api_key=0bd7fd73d465ac05909aa27eb30a3bea&query=' + search;
     fetch(url, function(response) {
+      var movieTtl = document.querySelector('.movieTitle');
+      movieTtl.innerHTML = movieFunctions.nameMovie(response);
       var rate = movieFunctions.rateMovie(response);
       var li = document.createElement('li');
       ul.innerHTML = "";
@@ -76,7 +78,7 @@ function castMovies(id, callback) {
 function castGify(name, callback) {
   var gifResult = document.querySelector('.gifs-results');
   document.querySelector('.gifs-results').innerHTML = "";
-  var url = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=lj5mU1p8ueKRo1mBPEfEVSsnkHPXBWPh";
+  var url = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=lj5mU1p8ueKRo1mBPEfEVSsnkHPXBWPh";
   fetch(url, function(response) {
     var imgs = movieFunctions.gifsMovie(response);
     var imgsUL = imgs.forEach(function(value) {

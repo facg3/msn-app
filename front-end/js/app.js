@@ -31,7 +31,10 @@ const movieFunctions = {
     gifs.push(rs.data[i].images.downsized.url);
     }
     return gifs;
-  }
+  },
+  nameMovie: function (res) {
+   return res.results[0].title;
+ }
 };
 
 
@@ -40,7 +43,6 @@ const movieFunctions = {
 if (typeof module !== 'undefined') {
   module.exports = {
     movieFunctions:movieFunctions,
-    gifsMovie:gifsMovie,
     castFunctions:castFunctions
   }
 }
