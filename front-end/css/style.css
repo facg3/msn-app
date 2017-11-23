@@ -4,6 +4,11 @@ body{
   color: #444;
   letter-spacing: 1px;
 }
+.movieTitle{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 40px;
+}
 .wrapper{
     width: 95%;
     max-width: 1170px;
