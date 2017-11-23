@@ -19,11 +19,13 @@ const movieFunctions = {
   },
   //overview
   ovMovie : function (res) {
-    // console.log(res.results[0].overview);
     return res.results[0].overview;
   },
   rateMovie : function (r) {
-    return r.results[0].vote_average;
+
+      return r.results[0].vote_average;
+
+
   },
   gifsMovie: function (rs){
     var gifs = [];

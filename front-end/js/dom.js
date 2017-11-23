@@ -38,37 +38,40 @@ function idMovies(searchInput, callback) {
       var movieTtl = document.querySelector('.movieTitle');
       movieTtl.innerHTML = movieFunctions.nameMovie(response);
       var rate = movieFunctions.rateMovie(response);
+
+
       var li = document.createElement('li');
-      ul.innerHTML = "";
+      ul.textContent = "";
       li.innerHTML = (rate);
       ul.appendChild(li);
       var poter = document.querySelector('.poster');
-      document.querySelector('.poster').innerHTML = "";
+      document.querySelector('.poster').textContent = "";
       var img = document.createElement('img');
       var imgUrl = 'https://image.tmdb.org/t/p/w640' + movieFunctions.photoMovie(response);
       img.src = imgUrl;
       poter.appendChild(img);
       var divov = document.querySelector('.overview');
-      document.querySelector('.overview').innerHTML = "";
+      document.querySelector('.overview').textContent = "";
       var p = document.createElement('p');
       p.innerHTML = movieFunctions.ovMovie(response);
       divov.appendChild(p);
       var id = movieFunctions.idMovie(response);
       document.querySelector('.search_query').value = "";
       callback(id);
+
     })
   }
 }
 function castMovies(id, callback) {
   var castName = document.querySelector('.cast-names');
-  document.querySelector('.cast-names').innerHTML = "";
+  document.querySelector('.cast-names').textContent = "";
   var url = "https://api.themoviedb.org/3/movie/" + id + "/casts?api_key=0bd7fd73d465ac05909aa27eb30a3bea";
   fetch(url, function(response) {
     var name = castFunctions.topcasts(response);
     var ul = document.createElement('ul');
     var casts = name.forEach(function(value) {
       var li = document.createElement('li');
-      li.innerHTML = value;
+      li.textContent = value;
       ul.appendChild(li);
     })
     castName.appendChild(ul);
@@ -77,7 +80,7 @@ function castMovies(id, callback) {
 }
 function castGify(name, callback) {
   var gifResult = document.querySelector('.gifs-results');
-  document.querySelector('.gifs-results').innerHTML = "";
+  document.querySelector('.gifs-results').textContent = "";
   var url = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=lj5mU1p8ueKRo1mBPEfEVSsnkHPXBWPh";
   fetch(url, function(response) {
     var imgs = movieFunctions.gifsMovie(response);
