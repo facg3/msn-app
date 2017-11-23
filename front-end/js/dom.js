@@ -39,7 +39,7 @@ function idMovies(searchInput, callback) {
 
 
       var li = document.createElement('li');
-      ul.innerHTML = "";
+      ul.textContent = "";
       li.innerHTML = (rate);
       ul.appendChild(li);
       var poter = document.querySelector('.poster');
