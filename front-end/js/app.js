@@ -43,7 +43,6 @@ const movieFunctions = {
 if (typeof module !== 'undefined') {
   module.exports = {
     movieFunctions:movieFunctions,
-    gifsMovie:gifsMovie,
     castFunctions:castFunctions
   }
 }

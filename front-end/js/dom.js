@@ -78,7 +78,7 @@ function castMovies(id, callback) {
 function castGify(name, callback) {
   var gifResult = document.querySelector('.gifs-results');
   document.querySelector('.gifs-results').innerHTML = "";
-  var url = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=lj5mU1p8ueKRo1mBPEfEVSsnkHPXBWPh";
+  var url = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=lj5mU1p8ueKRo1mBPEfEVSsnkHPXBWPh";
   fetch(url, function(response) {
     var imgs = movieFunctions.gifsMovie(response);
     var imgsUL = imgs.forEach(function(value) {
