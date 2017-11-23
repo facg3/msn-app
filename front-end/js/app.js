@@ -22,14 +22,11 @@ const movieFunctions = {
     return res.results[0].overview;
   },
   rateMovie : function (r) {
-
       return r.results[0].vote_average;
-
-
   },
   gifsMovie: function (rs){
     var gifs = [];
-   for (var i = 0; i< 10; i++){
+   for (var i = 0; i< rs.data.length ; i++){
     gifs.push(rs.data[i].images.downsized.url);
     }
     return gifs;
