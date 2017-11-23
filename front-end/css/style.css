@@ -55,32 +55,20 @@ h1{
     font-weight: normal;
 }
 
-/*.search_query{
-    margin: 0px auto;
-    width: 300px;
-    height: 50px;
-    box-sizing: border-box;
-    background-color: #11113A;
-    margin-bottom: 2px;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    display: flex;*/
-
-}
 .search-btn{
     color: white;
     width: 100px;
     height: 50px;
     text-decoration: none;
-    margin: 100px auto;
-    margin-top: 0px;
+    margin: 10px auto;
     justify-content: center;
     align-items: center;
     display: flex;
     cursor: pointer;
+    border-radius: 20px;
   }
   .all{
+    margin-left: 10px;
     display: flex;
   }
   .poster img{
@@ -95,147 +83,22 @@ h1{
     flex-direction: column;
     margin: 15px;
   }
-/*h1{
-  margin: 100px;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    display: flex;
 
-}
-
-.flex-container{
-display: flex;
-justify-content: flex-start;
-}
-.po{
-  margin: auto;
-  height: 500px;
-  width:500px;
-}
-.ph{
-  height: 300px;
-  width:300px;
-  margin: 20px;
-}
-.Poster{
-  display:flex;
-  flex-direction: column;
-  align-items:flex-start;
-  margin: 20px;
-  width:50%;
-}
-.Information-Film{
-  display: flex;
-  flex-direction: column;
-  width:50%;
-  color: white;
-}
-.overview{
-  display: flex;
- color: white;
- flex-direction: colh1{
-  margin: 100px;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-
-}
-.search_query{
-  margin: 100px auto;
-    width: 300px;
-    height: 50px;
-    box-sizing: border-box;
-    background-color: #11113A;
-    margin-bottom: 2px;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-
-}
-.search-btn{
-background-color: #11113A;
-    border: none;
-    color: white;
-    width: 100px;
-    height: 50px;
-    text-decoration: none;
-    margin: 100px auto;
-    margin-top: 0px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    cursor: pointer;
+  .gifs-results{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-.flex-container{
-display: flex;
-justify-content: flex-start;
-}
-.po{
-  margin: auto;
-  height: 500px;
-  width:500px;
-}
-.ph{
-  height: 300px;
-  width:300px;
-  margin: 20px;
-}
-.Poster{
-  display:flex;
-  flex-direction: column;
-  align-items:flex-start;
-  margin: 20px;
-  width:50%;
-}
-.Information-Film{
-  display: flex;
-  flex-direction: column;
-  width:50%;
-  color: white;
-}
-.overview{
-  display: flex;
- color: white;
- flex-direction: column;
-}
-.cast{
-color: white;
-  display: flex;
- flex-direction: column;
-}
-.bottom{
-  display: flex;
-  flex-direction: row;
-}
-.photos{
+  .gifs-results img{
+    width: 330px;
+    height: 180px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    justify-self: center;
+    left: auto;
+  }
 
-  display: flex;
-  justify-content: center;
-}
-.photos>div {
-
-  margin:40px;;
-}
-umn;
-}
-.cast{
-color: white;
-  display: flex;
- flex-direction: column;
-}
-.bottom{
-  display: flex;
-  flex-direction: row;
-}
-.photos{
-
-  display: flex;
-  justify-content: center;
-}
-.photos>div {
-
-  margin:40px;;
-}*/
+  .gifs-results img:nth-child(even){
+    align-self: center;
+  }

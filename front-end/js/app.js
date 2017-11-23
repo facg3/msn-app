@@ -1,5 +1,4 @@
 
-
 var castFunctions = {
     topcasts : function (res) {
       var casts = [];
@@ -28,7 +27,7 @@ const movieFunctions = {
   },
   gifsMovie: function (rs){
     var gifs = [];
-   for (var i = 0; i< rs.data.length; i++){
+   for (var i = 0; i< 10; i++){
     gifs.push(rs.data[i].images.downsized.url);
     }
     return gifs;
